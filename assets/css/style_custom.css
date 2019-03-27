@@ -15,4 +15,16 @@ p{
     font-size: 14px;
 }
 
+#metro_map{
+    width: 60%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+#jumbotron_custom{
+    height: 120px;
+    padding-top: 30px ;
+}
+
 
