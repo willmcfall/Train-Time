@@ -86,19 +86,21 @@ $(document).ready(function () {
     console.log(trainFrequency);
 
     // Creates variable for start time
-    var m = moment(trainStart, "HHmm");
-
+    var start = moment(trainStart, "HHmm");
+    var end = moment(trainEnd, "HHmm");
 
     // Creates variable that counts number of minutes between start time and end time
 
+    var minStartEnd = end.diff(start, 'minutes');
 
     // Creates an array of all times from start time until end time
     var i = 0;
     var arrivalTimes = {};
-    for (i=0; i < 14; i++){
-      arrivalTimes[i] = m.add(trainFrequency, "minutes").format('LT');
+    for (i = 0; i < (minStartEnd / trainFrequency); i++) {
+      arrivalTimes[i] = start.add(trainFrequency, "minutes").format('LT');
     };
     console.log(arrivalTimes);
+
     // Creates an array for the current time
 
 
