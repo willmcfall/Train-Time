@@ -11,12 +11,13 @@
 
 // 1. Initialize Firebase
 var config = {
-  apiKey: ???,
-  authDomain: ???,
-  databaseURL: ???,
-  storageBucket: ???
+  apiKey: "AIzaSyCCIFvXuFLBY9_ijuCZmV9ct_a6N_E7JUY",
+  authDomain: "train-time-bce3e.firebaseapp.com",
+  databaseURL: "https://train-time-bce3e.firebaseio.com",
+  projectId: "train-time-bce3e",
+  storageBucket: "train-time-bce3e.appspot.com",
+  messagingSenderId: "569958278323"
 };
-
 firebase.initializeApp(config);
 
 var database = firebase.database();
@@ -30,7 +31,7 @@ $("#submit_button").on("click", function(event) {
   // Grabs user input
   var trainName = $("#train_name").val().trim();
   var trainDestination = $("#destination").val().trim();
-  var trainStart = moment($("#start_time").val().trim(), "MM/DD/YYYY").format("X");
+  var trainStart = moment($("#start_time").val().trim(), "HHmm").format("HHmm");
   var trainFrequency = $("#frequency").val().trim();
 
   // Creates local "temporary" object for holding train data
