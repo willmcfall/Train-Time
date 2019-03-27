@@ -85,8 +85,28 @@ $(document).ready(function () {
     console.log(trainEnd);
     console.log(trainFrequency);
 
-    // Prettify the train start
-    var trainStartConverted = moment.unix(trainStart).format("HHmm");
+    // Creates variable for start time
+    var m = moment(trainStart, "HHmm");
+
+
+    // Creates variable that counts number of minutes between start time and end time
+
+
+    // Creates an array of all times from start time until end time
+    var i = 0;
+    var arrivalTimes = {};
+    for (i=0; i < 14; i++){
+      arrivalTimes[i] = m.add(trainFrequency, "minutes").format('LT');
+    };
+    console.log(arrivalTimes);
+    // Creates an array for the current time
+
+
+    // Runs a loop to see when the next arriving train is
+
+
+    // Calculates the amount of time between the current time and the next arriving train
+
 
     // Create the new row
     var newRow = $("<tr>").append(
