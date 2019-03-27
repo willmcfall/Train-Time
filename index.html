@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Train Time Schedule</title>
+
+  <!-- Reset CSS Link -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+
+  <!-- Hover CSS Link -->
+  <link rel="stylesheet" href="assets/css/hover.css">
+
+  <!-- Bootstrap Link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom CSS Link -->
+  <link rel="stylesheet" href="assets/css/style_custom.css">
+
+  <!-- JQuery Link -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Firebase Link -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+
+  <!-- Customs Javascript Link -->
+  <script src="assets/javascript/javascript_custom.js"></script>
+
+
+</head>
+
+<body>
+
+  <!-- Header-->
+  <div class="jumbotron text-center">
+    <h1>Anytime is Training Time</h1>
+    <p> Choo Choo. Chee Chee.</p>
+  </div>
+
+  <!-- Table Body -->
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-1">
+      </div>
+      <div class="col-10">
+
+        <div class="card">
+          <div class="card-header text-left">
+            Current Train Schedule
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Train Name</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">Frequency (min)</th>
+                  <th scope="col">Next Arrival</th>
+                  <th scope="col">Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <!-- Enter Data Body -->
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-1">
+      </div>
+      <div class="col-10">
+
+        <div class="card">
+          <div class="card-header text-left">
+            Add Train
+          </div>
+          <div class="card-body">
+            <div class="form-group text-left">
+              <label for="train_name">Train Name</label>
+              <input type="text" class="form-control" id="train_name"></input>
+            </div>
+
+            <div class="form-group text-left">
+              <label for="destination">Destination</label>
+              <input type="text" class="form-control" id="destination"></input>
+            </div>
+
+            <div class="form-group text-left">
+              <label for="start_time">First Train Time (HHam - military time)</label>
+              <input type="date" class="form-control" id="start_time"></input>
+            </div>
+
+            <div class="form-group text-left">
+              <label for="frequency">Train Frequency (minutes)</label>
+              <input type="number" class="form-control" id="frequency"></input>
+            </div>
+            <div class="text-left">
+              <button type="button" id="submit_button" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
