@@ -86,44 +86,28 @@ $(document).ready(function () {
     console.log(trainFrequency);
 
     // Creates variable for start time
-    var start = moment(trainStart, "HHmm");
-    var end = moment(trainEnd, "HHmm");
-
-    // Creates variable that counts number of minutes between start time and end time
-
-    var minStartEnd = end.diff(start, 'minutes');
-
-    // Creates an array of all times from start time until end time
-    var i = 0;
-    var arrivalTimes = [""];
-    for (i = 0; i < (minStartEnd / trainFrequency); i++) {
-      arrivalTimes[i] = start.add(trainFrequency, "minutes").format('LT');
-    };
-    console.log(arrivalTimes);
+    var start = moment(trainStart, 'HH:mm').subtract(1, "years");
+    var end = moment(trainEnd, 'HH:mm').subtract(1, "years");
+    console.log(start);
+    console.log(end);
 
     // Creates a variable for the current time and finds the value in the array in which it is in between
-
-    var currentTime = moment().format("LT");
+    var currentTime = moment();
     console.log(currentTime);
 
-    // Runs a loop to see when the next arriving train is
-    var i = 0;
-    for (i=0; i < arrivalTimes.length; i++){
-      console.log(arrivalTimes[i]);
-      console.log(arrivalTimes[i+1]);
-      console.log(currentTime);
-      if(moment(currentTime).isBetween(arrivalTimes[i], arrivalTimes[i+1]) === true){
-        console.log("Next arrival is " + arrivalTimes[i]);
-      }
-      else {
-        console.log("nope");
-      };
-    };
+    // Creates a variable that calculates the difference in time from start time until curren time
+    var diffTime = moment().diff(moment(start), "minutes");
 
+    // Creates a variable that provides the remainder from dividing difference from train frequency
+    var tRemainder = diffTime % trainFrequency;
 
+    // Creates a variable the stores the number of minutes until the next train
+    var tMinutesTillTrain = trainFrequency - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
-    // Calculates the amount of time between the current time and the next arriving train
-
+    // Creates a variable the stores the number of minutes until the next train
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    var formatedNextTrain = moment(nextTrain).format("hh:mm");
 
     // Create the new row
     var newRow = $("<tr>").append(
@@ -132,6 +116,8 @@ $(document).ready(function () {
       $("<td>").text(trainStart),
       $("<td>").text(trainEnd),
       $("<td>").text(trainFrequency),
+      $("<td>").text(formatedNextTrain),
+      $("<td>").text(tMinutesTillTrain),
     );
 
     // Append the new row to the table
