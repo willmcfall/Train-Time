@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Train Time Schedule</title>
+  <title> Ballston MU Metro Station Schedule</title>
 
   <!-- Reset CSS Link -->
   <link rel="stylesheet" href="assets/css/reset.css">
@@ -38,105 +38,108 @@
 <body>
 
   <!-- Header-->
-  <div id= "jumbotron_custom" class="jumbotron text-center">
-    <h1>Anytime is Training Time</h1>
-    <p> Choo Choo. Chee Chee.</p>
+  <div id="jumbotron_custom" class="jumbotron text-center">
+    <h1>Ballston MU Metro Station Schedule</h1>
+    <p> Chugga Chugga Chugga. Choo Choo. Chee Chee. Chugga Chugga Chugga.</p>
   </div>
 
-  <div class="row">
-    <div class="col-1">
-    </div>
-    <div class="col-10">
-      <img id="metro_map" src="assets/images/metro_map.PNG"></img>
-    </div>
-    <div class="col-1">
-    </div>
-  </div>
-
-  <br>
-  
-  <!-- Table Body -->
   <div class="container">
-    <div class="row text-center">
+    <div class="row">
       <div class="col-1">
       </div>
       <div class="col-10">
-
-        <div class="card">
-          <div class="card-header text-left">
-            Current Train Schedule
-          </div>
-          <div class="card-body">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Train Name</th>
-                  <th scope="col">Destination</th>
-                  <th scope="col">Frequency (min)</th>
-                  <th scope="col">Next Arrival</th>
-                  <th scope="col">Minutes Away</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <img id="metro_map" src="assets/images/metro_map.PNG"></img>
       </div>
       <div class="col-1">
       </div>
     </div>
-  </div>
 
-  <br>
+    <br>
 
-  <!-- Enter Data Body -->
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-1">
-      </div>
-      <div class="col-10">
+    <!-- Table Body -->
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
 
-        <div class="card">
-          <div class="card-header text-left">
-            Add Train
-          </div>
-          <div class="card-body">
-            <div class="form-group text-left">
-              <label for="train_name">Train Name</label>
-              <input type="text" class="form-control" id="train_name"></input>
+          <div class="card">
+            <div class="card-header text-left">
+              Current Train Schedule
             </div>
-
-            <div class="form-group text-left">
-              <label for="destination">Destination</label>
-              <input type="text" class="form-control" id="destination"></input>
-            </div>
-
-            <div class="form-group text-left">
-              <label for="start_time">First Train Time (HHmm - military time)</label>
-              <input type="number" class="form-control" id="start_time"></input>
-            </div>
-
-            <div class="form-group text-left">
-              <label for="end_time">Last Train Time (HHmm - military time)</label>
-              <input type="number" class="form-control" id="end_time"></input>
-            </div>
-
-            <div class="form-group text-left">
-              <label for="frequency">Train Frequency (minutes)</label>
-              <input type="number" class="form-control" id="frequency"></input>
-            </div>
-            <div class="text-left">
-              <button type="button" id="submit_button" class="btn btn-primary">Submit</button>
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">First Train (hhmm)</th>
+                    <th scope="col">Last Train (hhmm)</th>
+                    <th scope="col">Frequency (min)</th>
+                    <th scope="col">Next Arrival</th>
+                    <th scope="col">Arrival Wait Time (min)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
+        <div class="col-1">
+        </div>
       </div>
-      <div class="col-1">
+    </div>
+
+    <br>
+
+    <!-- Enter Data Body -->
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+
+          <div class="card">
+            <div class="card-header text-left">
+              Add Train
+            </div>
+            <div class="card-body">
+              <div class="form-group text-left">
+                <label for="train_name">Train Name</label>
+                <input type="text" class="form-control" id="train_name"></input>
+              </div>
+
+              <div class="form-group text-left">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" id="destination"></input>
+              </div>
+
+              <div class="form-group text-left">
+                <label for="start_time">First Train Time (HHmm - military time)</label>
+                <input type="number" class="form-control" id="start_time"></input>
+              </div>
+
+              <div class="form-group text-left">
+                <label for="end_time">Last Train Time (HHmm - military time)</label>
+                <input type="number" class="form-control" id="end_time"></input>
+              </div>
+
+              <div class="form-group text-left">
+                <label for="frequency">Train Frequency (minutes)</label>
+                <input type="number" class="form-control" id="frequency"></input>
+              </div>
+              <div class="text-left">
+                <button type="button" id="submit_button" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+        </div>
       </div>
     </div>
   </div>
-
 </body>
 
 </html>

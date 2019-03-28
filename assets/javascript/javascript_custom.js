@@ -112,7 +112,7 @@ $(document).ready(function () {
       console.log(arrivalTimes[i]);
       console.log(arrivalTimes[i+1]);
       console.log(currentTime);
-      if(currentTime.isBetween(arrivalTimes[i], arrivalTimes[i+1]) === true){
+      if(moment(currentTime).isBetween(arrivalTimes[i], arrivalTimes[i+1]) === true){
         console.log("Next arrival is " + arrivalTimes[i]);
       }
       else {
@@ -129,6 +129,8 @@ $(document).ready(function () {
     var newRow = $("<tr>").append(
       $("<td>").text(trainName),
       $("<td>").text(trainDestination),
+      $("<td>").text(trainStart),
+      $("<td>").text(trainEnd),
       $("<td>").text(trainFrequency),
     );
 
