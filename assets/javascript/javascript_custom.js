@@ -95,16 +95,31 @@ $(document).ready(function () {
 
     // Creates an array of all times from start time until end time
     var i = 0;
-    var arrivalTimes = {};
+    var arrivalTimes = [""];
     for (i = 0; i < (minStartEnd / trainFrequency); i++) {
       arrivalTimes[i] = start.add(trainFrequency, "minutes").format('LT');
     };
     console.log(arrivalTimes);
 
-    // Creates an array for the current time
+    // Creates a variable for the current time and finds the value in the array in which it is in between
 
+    var currentTime = moment().format("LT");
+    console.log(currentTime);
 
     // Runs a loop to see when the next arriving train is
+    var i = 0;
+    for (i=0; i < arrivalTimes.length; i++){
+      console.log(arrivalTimes[i]);
+      console.log(arrivalTimes[i+1]);
+      console.log(currentTime);
+      if(currentTime.isBetween(arrivalTimes[i], arrivalTimes[i+1]) === true){
+        console.log("Next arrival is " + arrivalTimes[i]);
+      }
+      else {
+        console.log("nope");
+      };
+    };
+
 
 
     // Calculates the amount of time between the current time and the next arriving train
